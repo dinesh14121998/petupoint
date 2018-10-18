@@ -3,6 +3,7 @@ package servlets;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -15,6 +16,7 @@ import javax.servlet.http.Part;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
+
 
 import dao.CategoryDAO;
 import dao.ProductDAO;
@@ -80,13 +82,14 @@ public class AddProduct extends HttpServlet {
 		p.setImagePath(imagePath);
 
 		p.setCategory(c);
-
+		
+	
 		ProductDAO pdao = new ProductDAOImpl();
 
 		pdao.insert(p);
 
 		resp.sendRedirect("/" + getServletContext().getServletContextName() + "/ViewProducts.jsp");
-
+		  
 	}
 
 }

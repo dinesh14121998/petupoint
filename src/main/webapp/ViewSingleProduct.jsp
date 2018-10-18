@@ -72,17 +72,26 @@
 		</tbody>
 	</table>
 
+	<c:if test="${not empty error}">
+	<h1 class="alert alert-danger">Invalid Input</h1>
+	</c:if>
+
 	<form action="AddCart" method="post">
 
 		<input type="hidden" value="${Product.getId()}" name="pid">
 		
+		<c:if test="${sessionScope.role == 'ROLE_USER'}">
+		
 		<input type="number"
 			 name="qty" class="form-control" placeholder="Enter Qty">
 			
-		 <br> <input type="email" name="email" class="form-control"
+		 <br>
+		 
+		  <input type="email" name="email" class="form-control"
 			placeholder="Enter Email" value="${loggedInUserEmail}"> <br> 
 			 <input type="submit" value="Submit"
 			class="btn btn-primary"> 
+			</c:if>
 	</form>
 </body>
 </html>

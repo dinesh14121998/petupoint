@@ -41,7 +41,7 @@ public class Login extends HttpServlet {
 			
 			req.getSession().setAttribute("role", u.getRole());
 			
-			resp.sendRedirect("index.jsp");
+			resp.sendRedirect("index.html");
 			
 		}
 		

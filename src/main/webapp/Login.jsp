@@ -29,6 +29,8 @@
 </head>
 <body style="margin: auto; width: 80%;">
 
+	<c:import url="Header1.jsp"></c:import>
+
 
 	<h1>Login</h1>
 	<br>

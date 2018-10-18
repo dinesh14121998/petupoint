@@ -12,20 +12,33 @@ import dao.ProductDAO;
 import model.Product;
 
 public class ProductDAOImpl implements ProductDAO {
+
 	
-	
-	
-	public List<Product> getProduct(String category) {
+	public void deleteCatProducts(int category_id) {
 		Session s = Config.sessionFactory.openSession();
 		Transaction t = s.beginTransaction();
 
-		List<Product> p = s.createQuery("from Product where category=:category").setString("category", category).getResultList();
+		 s.createQuery("delete Product where category_id=:category_id").setInteger("category_id", category_id).executeUpdate();
+
+		t.commit();
+		s.close();
+	}
+
+
+
+	public List<Product> getProductCat(int category_id) {
+		Session s = Config.sessionFactory.openSession();
+		Transaction t = s.beginTransaction();
+
+		List<Product> p = s.createQuery("from Product where category_id=:category_id").setInteger("category_id", category_id).getResultList();
 
 		t.commit();
 		s.close();
 		
 		return p;
 	}
+
+	
 
 	public void insert(Product p) {
 

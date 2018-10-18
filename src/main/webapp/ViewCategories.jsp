@@ -1,3 +1,4 @@
+<%@include file="Header.jsp" %>
 <%@page import="impl.CategoryDAOImpl"%>
 <%@page import="dao.CategoryDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
