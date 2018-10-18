@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>Insert title here</title>
 
 <!-- Latest compiled and minified CSS -->
@@ -22,9 +23,26 @@
 
 <form action="AddCategory" method="post">
 
-	<input name="name" class="form-control" placeholder="Enter Category Name">
+	<input name="name" class="form-control" placeholder="Enter Category Name" value="${currentCategory.getName()}">
+	
+	<c:if test="${not empty errorMap}">
+	
+			<c:forEach items="${errorMap.name}" var="errors">
+				<h1 class="alert alert-danger">${errors}</h1>
+			</c:forEach>
+				
+		</c:if>
+	
 	<br>
-	<input name="description" class="form-control" placeholder="Enter Category Description" >
+	<input name="description" class="form-control" placeholder="Enter Category Description" value="${currentCategory.getDescription()}">
+	
+	<c:if test="${not empty errorMap}">
+	
+			<c:forEach items="${errorMap.description}" var="errors">
+				<h1 class="alert alert-danger">${errors}</h1>
+			</c:forEach>
+			
+	</c:if>
 	<br>
 	<input type="submit" value="Submit" class="btn btn-primary">
 

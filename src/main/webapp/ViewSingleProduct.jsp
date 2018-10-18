@@ -74,12 +74,15 @@
 
 	<form action="AddCart" method="post">
 
-		<input type="hidden" value="${Product.getId()}" name="pid"> <input
-			type="number" name="qty" class="form-control" placeholder="Enter Qty">
-		<br> <input type="email" name="email" class="form-control"
-			placeholder="Enter Email" value="${loggedInUserEmail}"> <br> <a href="ViewCart.jsp"
-			class="btn btn-primary">view</a> <input type="submit" value="Submit"
-			class="btn btn-primary">
+		<input type="hidden" value="${Product.getId()}" name="pid">
+		
+		<input type="number"
+			 name="qty" class="form-control" placeholder="Enter Qty">
+			
+		 <br> <input type="email" name="email" class="form-control"
+			placeholder="Enter Email" value="${loggedInUserEmail}"> <br> 
+			 <input type="submit" value="Submit"
+			class="btn btn-primary"> 
 	</form>
 </body>
 </html>

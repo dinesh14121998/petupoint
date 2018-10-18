@@ -1,5 +1,7 @@
 <%@page import="impl.CategoryDAOImpl"%>
 <%@page import="dao.CategoryDAO"%>
+<%@page import="impl.ProductDAOImpl"%>
+<%@page import="dao.ProductDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
@@ -9,7 +11,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>View Categories</title>
+<title>View Products By Category</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
@@ -24,17 +26,21 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <%
-	CategoryDAO cdao = new CategoryDAOImpl();
+     ProductDAO pdao = new ProductDAOImpl();
+ 
+    request.setAttribute("Products", pdao.getProductCat(Integer.parseInt(request.getParameter("category_id"))));
 
-	request.setAttribute("categories", cdao.getCategory());
+   CategoryDAO cdao = new CategoryDAOImpl();
+
+	request.setAttribute("categories", cdao.getCategory(Integer.parseInt(request.getParameter("category_id"))));
 	
-	
+
 %>
 
 </head>
 <body style="margin: auto; width: 80%;">
 
-	<h1>View Categories</h1>
+	<h1>Products In this Category</h1>
 
 	<table class="table table-striped" style="font-size: 20px; font-weight: bold;">
 		<thead>
@@ -43,44 +49,36 @@
 				<td>Id</td>
 				<td>Name</td>
 				<td>Description</td>
-				<c:if test="${sessionScope.role == 'ROLE_ADMIN'}">
-				<td>Update</td>
-				<td>Delete</td>
-					</c:if>
+				<td>Category</td>
+				<td>Price</td>
+				<td>Image</td>
+				
 			</tr>
 
 
 		</thead>
-		<tbody>
+		<tbody> 
 
-			<c:forEach var="x" items="${categories}">
+			<c:forEach var="x" items="${Products}">
 
 				<tr>
 					<td>${x.getId()}</td>
 					<td>${x.getName()}</td>
-					<td>${x.getDescription()}</td>
-					
-					<c:if test="${sessionScope.role == 'ROLE_ADMIN'}">
-					<td><a href="UpdateCategory.jsp?id=${x.getId()}" class="btn btn-success">Update</a></td>
-					<!-- <td><a href="DeleteCategory?id=${x.getId()}" class="btn btn-danger">Delete</a></td>
-					<td><a href="DeleteProCat?category_id=${x.getId()}" class="btn btn-danger">Delete ME</a></td>
-					
-					 -->
-					<td>
-					
-					<a href="ViewProductsByCategory.jsp?category_id=${x.getId()}" class="btn btn-danger">Delete</a>
-					</c:if>
-						</td>
-					<td>    
+					<td style="font-size:15px;">${x.getDescription()}</td>
+					<td>${x.getCategory().getName()}</td>
+					<td>${x.getPrice()}</td>
+					 <td><img src="${x.getImagePath()}" style="max-width: 100px;" class="img img-thumbnail"/></td>
 					
 					
-					</td>
 				</tr>
 
 			</c:forEach>
 
 		</tbody>
 	</table>
+<h1>Delete All Products</h1>
+
+	 	<a href="DeleteProCat?category_id=${categories.getId()}" class="btn btn-danger">Delete</a> 
 
 </body>
 </html>

@@ -46,8 +46,10 @@
 				<td>Image</td>
 				
 				<td>View</td>
+				<c:if test="${sessionScope.role == 'ROLE_ADMIN'}">
 				<td>Update</td>
 				<td>Delete</td>
+					</c:if>
 			</tr>
 
 
@@ -65,8 +67,11 @@
 					 <td><img src="${x.getImagePath()}" style="max-width: 100px;" class="img img-thumbnail"/></td>
 					
 					<td><a href="ViewSingleProduct.jsp?id=${x.getId()}" class="btn btn-primary">view</a></td>
+					
+					<c:if test="${sessionScope.role == 'ROLE_ADMIN'}">
 					<td><a href="UpdateProduct.jsp?id=${x.getId()}" class="btn btn-success">Update</a></td>
 					<td><a href="DeleteProduct?id=${x.getId()}" class="btn btn-danger">Delete</a></td>
+					</c:if>
 				</tr>
 
 			</c:forEach>

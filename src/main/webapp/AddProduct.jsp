@@ -40,8 +40,10 @@
 	<form action="AddProduct" method="post" enctype="multipart/form-data">
 
 		<input name="name" class="form-control" placeholder="Enter Producty Name">
+		
 		<br>
 		<input name="description" class="form-control" placeholder="Enter Product Description">
+	
 		<br>
 		<input name="price" class="form-control" placeholder="Enter Product Price">
 		<br>
