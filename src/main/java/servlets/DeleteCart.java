@@ -25,7 +25,7 @@ public class DeleteCart extends HttpServlet {
 		
 		kdao.delete(email);
 
-		resp.sendRedirect( "/" + getServletContext().getServletContextName() + "/ViewProducts.jsp");
+		resp.sendRedirect( "/" + getServletContext().getServletContextName() + "/index.jsp");
 		
 	}	
 	

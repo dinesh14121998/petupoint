@@ -1,0 +1,283 @@
+<%@page import="impl.CategoryDAOImpl"%>
+<%@page import="dao.CategoryDAO"%>
+<%@page import="impl.ProductDAOImpl"%>
+<%@page import="dao.ProductDAO"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html>
+<html >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.8.5, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.8.5, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo-122x87.png" type="image/x-icon">
+  <meta name="description" content="">
+  <title>Home</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+
+
+
+
+%>
+  
+</head>
+<body>
+  <section class="menu cid-r6WlswRZxY" once="menu" id="menu1-8">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="https://mobirise.co">
+                         <img src="assets/images/logo-122x87.png" alt="index.jsp" title="" style="height: 8rem;">
+                    </a>
+                </span>
+                
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="">
+                        </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="#top"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                        HOME &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</a>
+                        
+                        
+                </li>
+                <c:if test="${sessionScope.role != 'ROLE_USER'}">
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="reg.jsp"><span class="mbri-sites mbr-iconfont mbr-iconfont-btn"></span>CRETE AN ACCOUNT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</a></li>
+                </c:if>
+                <c:if test="${sessionScope.role != 'ROLE_USER'}">
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="logmein.jsp"><span class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>LOG IN &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a></li>
+                </c:if>
+                <c:if test="${sessionScope.role == 'ROLE_USER'}">
+                 <li class="nav-item">
+                 <a class="nav-link link text-white display-4" href="Logout"><span class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>LOG OUT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
+                 </li>
+                </c:if>
+                
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="index.html#testimonials2-o"><span class="mbri-align-right mbr-iconfont mbr-iconfont-btn"></span>ABOUT US &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.co">
+                        </a></li></ul>
+                       <c:if test="${sessionScope.role == 'ROLE_USER'}">
+                        <li class="nav-item"><a class="nav-link link text-white display-4" ><h4>Hi ${sessionScope.name}</h4>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.co">
+                     </a></li></ul> 
+                        </c:if>
+           
+        </div>
+    </nav>
+</section>
+
+<section class="engine"><a href=""></a></section><section class="header1 cid-r6WmiCH8gh mbr-fullscreen mbr-parallax-background" id="header1-d">
+
+    
+
+    
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-2">
+                    Petu poinT.com</h1>
+                
+                <p class="mbr-text align-center pb-3 mbr-fonts-style display-1">not Just food<br>Satisfaction To your Tummyyy.</p>
+                <div class="mbr-section-btn align-center"><a class="btn btn-md btn-white-outline display-4" href="ViewProductsForCat.jsp?category_id=25">VEGAN</a>
+                    <a class="btn btn-md btn-white-outline display-4" href="ViewProductsForCat.jsp?category_id=24">NON-VEG</a> <a class="btn btn-md btn-white-outline display-4" href="">STREET</a></div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="features8 cid-r6WHnhYOlk mbr-parallax-background" id="features8-n">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(35, 35, 35);">
+    </div>
+
+    <div class="container">
+        <div class="media-container-row">
+
+             <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-img pb-3">
+                    <span class="mbr-iconfont mbri-delivery"></span>
+                </div>
+                <div class="card-box">
+                    <h4 class="card-title py-3 mbr-fonts-style display-5">FASTEST DELIVERY</h4>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        WE GIVE THE WORLD'S FASTEST DELIVERY&nbsp;<br>AS WE DELIVER OUR FOOD<br>IN FERRARI AND LAMBORGINI</p>
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-img pb-3">
+                    <span class="mbr-iconfont socicon-feedburner socicon" style=""></span>
+                </div>
+                <div class="card-box">
+                    <h4 class="card-title py-3 mbr-fonts-style display-5">FRESH &amp; HOT</h4>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        WE PROVIDE 100% FRESH AND JSUT<br>MADE FOOD&nbsp;<br></p>
+                </div>
+            </div>
+
+             <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-img pb-3">
+                    <span class="mbr-iconfont mbri-like"></span>
+                </div>
+                <div class="card-box">
+                    <h4 class="card-title py-3 mbr-fonts-style display-5">100% &nbsp;CUSTOMER SATISFACTION</h4>
+                    <p class="mbr-text mbr-fonts-style display-7">ALL CUSTOMERS ARE FULLY STATISFIED<br>AS WE GIVE MONEY TO RANDOM PEPOLE TO<br>PRAISE OUT SITE FOR NO REASON</p>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</section>
+
+<section class="testimonials2 cid-r6WMgPnZhG" id="testimonials2-o">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-figure pr-lg-5" style="width: 85%;">
+              <img src="assets/images/my-934x745.jpg" alt="" title="">
+            </div>
+            <div class="media-content px-3 align-self-center mbr-white py-2">
+                    <p class="mbr-text testimonial-text mbr-fonts-style display-7">WORK HARD IN SILENCE&nbsp;<br>LET THE SUCCESS MAKE THE NOISE<br>....</p>
+                    <p class="mbr-author-name pt-4 mb-2 mbr-fonts-style display-7">
+                       DINESH YADAV</p>
+                    <p class="mbr-author-desc mbr-fonts-style display-7">
+                       DEVELOPER
+                    </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-r6WMvFfL5x" id="footer1-p">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-row content text-white">
+            <div class="col-12 col-md-3">
+                <div class="media-wrap">
+                    <a href="https://mobirise.co/">
+                        <img src="assets/images/logo-192x137.png" alt="Mobirise" title="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <h5 class="pb-3">
+                    Address
+                </h5>
+                <p class="mbr-text">C-43 Harsh Vihar<br>Hari nagar PART-3RD<br>Badarpur , New Delhi<br>Pin - 110044</p>
+            </div>
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <h5 class="pb-3">
+                    Contacts
+                </h5>
+                <p class="mbr-text">Email: dineshyadadk98@gmail.co<br>Phone: +91 &nbsp; 84706909672<br>webSITE : DkCreations.com</p>
+            </div>
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <h5 class="pb-3">
+                    Links
+                </h5>
+                <p class="mbr-text">
+                    <a class="text-primary" href="">Dk Products</a>
+                    <br><a class="text-primary" href="">D creativities</a>
+                    <br><a class="text-primary" href="">Dk Creations </a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-lower">
+            <div class="media-container-row">
+                <div class="col-sm-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="media-container-row mbr-white">
+                <div class="col-sm-6 copyright">
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        © Copyright 2018 Dk productios- By Dinesh yadav</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-list align-right">
+                        <div class="soc-item">
+                            <a href="" target="_blank">
+                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.facebook.com/dk.cena" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="" target="_blank">
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.instagram.com/dinesh.d.k_/" target="_blank">
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+  <script src="assets/parallax/jarallax.min.js"></script>
+  <script src="assets/dropdown/js/script.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  
+  
+ <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
+    <input name="animation" type="hidden">
+  </body>
+</html>

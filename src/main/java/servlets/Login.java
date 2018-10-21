@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
 			req.setAttribute("name", name);
 			req.setAttribute("password", password);
 			
-			req.getRequestDispatcher("Login.jsp").forward(req, resp);
+			req.getRequestDispatcher("logmein.jsp").forward(req, resp);
 			
 			
 		}else {
@@ -41,7 +41,7 @@ public class Login extends HttpServlet {
 			
 			req.getSession().setAttribute("role", u.getRole());
 			
-			resp.sendRedirect("index.html");
+			resp.sendRedirect("index.jsp");
 			
 		}
 		
